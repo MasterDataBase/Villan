@@ -1,0 +1,57 @@
+{
+    "type": "processor",
+    "fme_ip": "10.130.13.237",
+    "name": "processorC",
+    "object_ID": "processorC",
+    "config": {
+        "active": true,
+        "name": "processorC",
+        "object_ID": "processorC",
+        "type": "processor",        
+        "general": {
+            "personality": "Sync",            
+            "lowLatencyMode": false,
+            "audioPacketTime": 2,
+            "multiviewerMode": 0,
+            "cascadeInputSelect": 0,
+            "cascadeOutputSelect": 0,
+            "cascadeLevel": 0,
+            "rotationDirection": 0,
+            "tslDevice": -1,
+            "pluraDevice": -1,
+            "masterclockDevice": -1,
+            "dakRtdDevice": -1,
+            "sfpSelect": 0,
+            "sfpEnable": true,
+            "sfpEnable2": true,
+            "hdmiOutputSel": 0,
+            "SelectLayoutDisplay1": "DEFAULT.xml",
+            "SelectLayoutDisplay2": "DEFAULT.xml",
+            "MultiviewerOutputVideoStandard": "2160p/50",
+            "DisplayColorimetryTCS": "SDR-2020",
+            "mclOutputVideoStandard": "1080i/50",
+            "mclOutputColorimetryTCS": "SDR-709",
+            "videoBlackLevel": 0,
+            "videoWhiteLevel": 7000,
+            "DecimationFilterSharpness": 0,            
+            "forceMAB": false,
+            "enable9thReceiver": false,
+            "AdvancedMode": false,
+            "sfpTx2Role": 0,
+            "processorMode": 0,
+            "mclMode": 0
+        },
+        "sections": [
+            {
+                "idx": 1,
+                "opMode": "HD",
+                "inputMode": "SDI"
+            },
+            {
+                "idx": 2,
+                "opMode": "HD",
+                "inputMode": "SDI"
+            }
+        ]
+    }
+}

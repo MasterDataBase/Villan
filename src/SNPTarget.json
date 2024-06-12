@@ -1,0 +1,15 @@
+{
+    "snp":{
+        "account":{
+            "username":"admin",
+            "password":"password"
+        },
+        "machine": "10.130.13.232",
+        "port": "9089",
+        "proto": "https" 
+    },
+    "debug": false,
+    "ipVidTx": true,
+    "ipAncTx": true,
+    "ipAudTx": true
+}

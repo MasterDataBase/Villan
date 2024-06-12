@@ -1,0 +1,11 @@
+env/
+dist/
+
+src/build/
+src/__pycache__/
+
+src/Villain.spec
+src/error.json
+src/result.json
+
+*.xlsx
