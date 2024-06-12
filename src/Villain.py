@@ -43,7 +43,7 @@ def get_auth_token():
                 raise ValueError("Token not found in response")
             return token
         else:
-            handle_http_error(response)
+            handle_http_error(response, "token")
     except requests.exceptions.RequestException as e:
         print(f"Request failed: {e}")
         return None
@@ -110,7 +110,7 @@ def config_ipVidTx():
             if response.status_code == 200: 
                 print("Video audio 2110 configured")
             else: 
-                handle_http_error(response=response)
+                handle_http_error(response=response, channel="ipVidTx")
     else:
         print("Failed to retrieve token")    
         return False        
@@ -151,7 +151,7 @@ def config_ipAncTx():
             if response.status_code == 200: 
                 print("Ancillary Data 2110 configured")
             else: 
-                handle_http_error(response=response)
+                handle_http_error(response=response, channel="ipAncTx")
     else:
         print("Failed to retrieve token")    
         return False          
@@ -211,12 +211,12 @@ def config_ipAudTx():
             if response.status_code == 200: 
                 print("Audio streams channel 1 and 2 configured")
             else: 
-                handle_http_error(response=response)
+                handle_http_error(response=response, channel="ipAudTx")
     else:
         print("Failed to retrieve token")    
         return False       
 
-def handle_http_error(response):
+def handle_http_error(response, channel):
     print(str(response.raw))
     error = {
                 'httpCode': response.status_code,
@@ -224,7 +224,7 @@ def handle_http_error(response):
             }
     print(response.status_code)
     print(response.text)
-    with open(str('error') + '.json', 'w') as file_a:
+    with open(str('error') + "-" + str(channel) + '.json', 'w') as file_a:
         json.dump(error, file_a, indent=2)
 
 if __name__ == "__main__":

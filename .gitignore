@@ -9,3 +9,4 @@ src/error.json
 src/result.json
 
 *.xlsx
+*.zip
