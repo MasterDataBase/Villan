@@ -222,31 +222,32 @@ def config_ipAudRx():
         payloadAud = copy.deepcopy(utils.ipAudRx.CONFIG_IPAUDRX)
         payloadAud['fme_ip'] = machine
         
+        idx = (utils.idx_by_process_ipAudRx(audio_configs[0].processor) + int(audio_configs[0].source_channel))
         audRxRouting = list()
-        for row in audio_configs:     
-            idx = (utils.idx_by_process_ipAudRx(row.processor) + int(row.source_channel))
-            routingElm = utils.ipAudRx(idx=idx, AudRxStreamSelect=row.source_stream, AudRxChannelInStream=row.source_channel)
+        for row in audio_configs:                 
+            routingElm = utils.ipAudRx(idx=idx, AudRxStreamSelect=int(row.source_stream[0]), AudRxChannelInStream=int(row.source_channel))
             audRxRouting.append(routingElm.to_dict())
+            idx = idx + 1
         payloadAud['config']['AudRxRouting'] = audRxRouting
           
         with open(str('ipAudRx') + '.json', 'w') as file_a:
             json.dump(payloadAud, file_a, indent=2)
         
-        # if debug_mode:
-        #     print ("ipAncTx json printed")
-        #     return
-        # else: 
-        #     api_url = base_url + "/api/elements/" +  machine + "/config/ipAudTx"
-        #     headers = {
-        #         'Authorization': f'Bearer {token}',
-        #         'Content-Type': 'application/json'
-        #     }
-        #     payloadAud['config'] = json.dumps(payloadAud['config'])
-        #     response = requests.put(api_url, data=json.dumps(payloadAud), headers=headers, verify=False, stream=True)
-        #     if response.status_code == 200: 
-        #         print("Audio streams channel 1 and 2 configured")
-        #     else: 
-        #         handle_http_error(response=response, channel="ipAudTx")
+        if debug_mode:
+            print ("ipAudRx json printed")
+            return
+        else: 
+            api_url = base_url + "/api/elements/" +  machine + "/config/ipAudRx"
+            headers = {
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json'
+            }
+            payloadAud['config'] = json.dumps(payloadAud['config'])
+            response = requests.put(api_url, data=json.dumps(payloadAud), headers=headers, verify=False, stream=True)
+            if response.status_code == 200: 
+                print("Audio input streams 1 and 2 configured")
+            else: 
+                handle_http_error(response=response, channel="ipAudTx")
     else:
         print("Failed to retrieve token")    
         return False    
@@ -286,7 +287,6 @@ output_configs = utils.parse_output_config(file_path)
 # Get inputAudio file and value 
 file_path = 'inputAudio.csv'
 audio_configs = utils.parse_audio_config(file_path)    
-
 # Define if use debug mode
 debug_mode = snpInfo['debug']
 

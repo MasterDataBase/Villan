@@ -217,7 +217,7 @@ class CsvRow:
         return (f"CsvRow(hostname={self.hostname}, processore={self.processor}, pgm_n={self.pgm_n}, "
                 f"tipo_formato_flusso={self.flow_format}, ssm_no_set1={self.ssm_red}, "
                 f"ssm_no_set2={self.ssm_blue}, mcast_red={self.mcast_red}, mcast_blue={self.mcast_blue}, "
-                f"port={self.port}, enable={self.enable})")
+                f"port={self.port}, enable={self.enable}")
         
 class CsvRowAudRx:
     def __init__(self, hostname, processor, pgm_n, source_stream, source_channel):
@@ -229,7 +229,7 @@ class CsvRowAudRx:
 
     def __repr__(self):
         return (f"CsvRow(hostname={self.hostname}, processore={self.processor}, pgm_n={self.pgm_n}, "
-                f"tipo_formato_flusso={self.flow_format}, source_stream={self.source_stream}, source_channel={self.source_channel}")        
+                f"source_stream={self.source_stream}, source_channel={self.source_channel}")        
 
 def parse_output_config(file_path):
     rows = []
