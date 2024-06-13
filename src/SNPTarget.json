@@ -9,7 +9,8 @@
         "proto": "https" 
     },
     "debug": false,
-    "ipVidTx": true,
-    "ipAncTx": true,
-    "ipAudTx": true
+    "ipVidTx": false,
+    "ipAncTx": false,
+    "ipAudTx": false,
+    "ipAudRx": true
 }

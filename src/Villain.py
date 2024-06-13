@@ -81,7 +81,7 @@ def config_ipVidTx():
         payloadVid['fme_ip'] = machine
         
         ipVidTxCtrl = list()
-        for row in input_configs: 
+        for row in output_configs: 
             if row.flow_format == "2110-20-V":
                 idx = utils.idx_by_process_ipVidTx(row.processor) + int(row.pgm_n)
                 elm = utils.ipVidTx(idx=idx,
@@ -122,7 +122,7 @@ def config_ipAncTx():
         payloadAnc['fme_ip'] = machine
         
         ipAncTxCtrl = list()
-        for row in input_configs: 
+        for row in output_configs: 
             if row.flow_format == "2110-10_M":
                 idx = ((utils.idx_by_process_ipVidTx(row.processor) + int(row.pgm_n)) * 4) - 3
                 elm = utils.ipAncTx(idx=idx,
@@ -164,7 +164,7 @@ def config_ipAudTx():
         
         ipAudTxCtrl = list()
         audTxRouting = list()
-        for row in input_configs: 
+        for row in output_configs: 
             if row.flow_format == "2110-30 A Grp1 8ch":
                 idx = ((utils.idx_by_process_ipVidTx(row.processor) + int(row.pgm_n)) * 16) - 15
                 elm = utils.ipAudTx(idx=idx,
@@ -215,6 +215,41 @@ def config_ipAudTx():
     else:
         print("Failed to retrieve token")    
         return False       
+    
+def config_ipAudRx():
+    token = get_auth_token()
+    if token: 
+        payloadAud = copy.deepcopy(utils.ipAudRx.CONFIG_IPAUDRX)
+        payloadAud['fme_ip'] = machine
+        
+        audRxRouting = list()
+        for row in audio_configs:     
+            idx = (utils.idx_by_process_ipAudRx(row.processor) + int(row.source_channel))
+            routingElm = utils.ipAudRx(idx=idx, AudRxStreamSelect=row.source_stream, AudRxChannelInStream=row.source_channel)
+            audRxRouting.append(routingElm.to_dict())
+        payloadAud['config']['AudRxRouting'] = audRxRouting
+          
+        with open(str('ipAudRx') + '.json', 'w') as file_a:
+            json.dump(payloadAud, file_a, indent=2)
+        
+        # if debug_mode:
+        #     print ("ipAncTx json printed")
+        #     return
+        # else: 
+        #     api_url = base_url + "/api/elements/" +  machine + "/config/ipAudTx"
+        #     headers = {
+        #         'Authorization': f'Bearer {token}',
+        #         'Content-Type': 'application/json'
+        #     }
+        #     payloadAud['config'] = json.dumps(payloadAud['config'])
+        #     response = requests.put(api_url, data=json.dumps(payloadAud), headers=headers, verify=False, stream=True)
+        #     if response.status_code == 200: 
+        #         print("Audio streams channel 1 and 2 configured")
+        #     else: 
+        #         handle_http_error(response=response, channel="ipAudTx")
+    else:
+        print("Failed to retrieve token")    
+        return False    
 
 def handle_http_error(response, channel):
     print(str(response.raw))
@@ -227,47 +262,54 @@ def handle_http_error(response, channel):
     with open(str('error') + "-" + str(channel) + '.json', 'w') as file_a:
         json.dump(error, file_a, indent=2)
 
-if __name__ == "__main__":
-    # Main process
-    # Load JSON data from the files
-    with open('SNPTarget.json', 'r') as file_a:
-        snpInfo = json.load(file_a)    
+# if __name__ == "__main__":
+# Main process
+# Load JSON data from the files
+with open('SNPTarget.json', 'r') as file_a:
+    snpInfo = json.load(file_a)    
+
+# Define protocol info
+machine = snpInfo['snp']['machine']
+proto = snpInfo['snp']['proto']
+port = snpInfo['snp']['port']
+base_url = str(proto + "://" + machine + ":" + port)
+
+# Define user
+username = snpInfo['snp']['account']['username']
+password = snpInfo['snp']['account']['password']
+account = compose_account()
+
+# Get outputConfig file and value
+file_path = 'outputConfig.csv'
+output_configs = utils.parse_output_config(file_path)    
+
+# Get inputAudio file and value 
+file_path = 'inputAudio.csv'
+audio_configs = utils.parse_audio_config(file_path)    
+
+# Define if use debug mode
+debug_mode = snpInfo['debug']
+
+if snpInfo['ipVidTx'] == True:
+    config_ipVidTx()
+
+if snpInfo['ipAncTx'] == True:
+    config_ipAncTx()
     
-    # Define protocol info
-    machine = snpInfo['snp']['machine']
-    proto = snpInfo['snp']['proto']
-    port = snpInfo['snp']['port']
-    base_url = str(proto + "://" + machine + ":" + port)
+if snpInfo['ipAudTx'] == True:
+    config_ipAudTx()
     
-    # Define user
-    username = snpInfo['snp']['account']['username']
-    password = snpInfo['snp']['account']['password']
-    account = compose_account()
-    
-    # Get input config 
-    file_path = 'input.csv'
-    input_configs = utils.parse_csv(file_path)    
-    
-    # Define if use debug mode
-    debug_mode = snpInfo['debug']
-    
-    if snpInfo['ipVidTx'] == True:
-        config_ipVidTx()
-    
-    if snpInfo['ipAncTx'] == True:
-        config_ipAncTx()
-        
-    if snpInfo['ipAudTx'] == True:
-        config_ipAudTx()
-    # Get the authentication token
-    # token = get_auth_token()
-    # if token:
-    #     print("Token retrieved successfully:", token)
-    #     # Make the authenticated request using the token
-    #     response = make_authenticated_request(token)
-    #     if response:
-    #         print("Authenticated request successful:", response['config'])
-    #     else:
-    #         print("Authenticated request failed")
-    # else:
-    #     print("Failed to retrieve token")
+if snpInfo['ipAudRx'] == True:
+    config_ipAudRx()
+# Get the authentication token
+# token = get_auth_token()
+# if token:
+#     print("Token retrieved successfully:", token)
+#     # Make the authenticated request using the token
+#     response = make_authenticated_request(token)
+#     if response:
+#         print("Authenticated request successful:", response['config'])
+#     else:
+#         print("Authenticated request failed")
+# else:
+#     print("Failed to retrieve token")

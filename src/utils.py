@@ -170,7 +170,35 @@ class audTxRouting:
             "AudTxCh6Select": self.AudTxCh6Select,
             "AudTxCh7Select": self.AudTxCh7Select,
             "AudTxCh8Select": self.AudTxCh8Select,
+        }   
+        
+class ipAudRx:
+    def __init__(self,  idx, AudRxStreamSelect, AudRxChannelInStream):
+        self.idx = idx
+        self.AudRxStreamSelect = AudRxStreamSelect
+        self.AudRxChannelInStream = AudRxChannelInStream
+
+    def __repr__(self):
+        return (f"AudRxRouting(idx={self.idx}, AudRxStreamSelect={self.AudRxStreamSelect}, AudRxChannelInStream={self.AudRxChannelInStream}")
+
+    def to_dict(self):
+        return {
+            "idx": self.idx,
+            "AudRxStreamSelect": self.AudRxStreamSelect,
+            "AudRxChannelInStream": self.AudRxChannelInStream
         }    
+
+    CONFIG_IPAUDRX = {
+        "type": "ipAudRx",
+        "fme_ip": "",
+        "name": "ipAudRx",
+        "object_ID": "ipAudRx",
+        "parent_object_ID": "snpIpRx",
+        "config":{
+            "AudRxRouting": {}
+        }
+    }
+         
 
 class CsvRow:
     def __init__(self, hostname, processor, pgm_n, flow_format, ssm_red, ssm_blue, mcast_red, mcast_blue, port, enable):
@@ -190,8 +218,20 @@ class CsvRow:
                 f"tipo_formato_flusso={self.flow_format}, ssm_no_set1={self.ssm_red}, "
                 f"ssm_no_set2={self.ssm_blue}, mcast_red={self.mcast_red}, mcast_blue={self.mcast_blue}, "
                 f"port={self.port}, enable={self.enable})")
+        
+class CsvRowAudRx:
+    def __init__(self, hostname, processor, pgm_n, source_stream, source_channel):
+        self.hostname = hostname
+        self.processor = processor
+        self.pgm_n = pgm_n
+        self.source_stream = source_stream,
+        self.source_channel = source_channel
 
-def parse_csv(file_path):
+    def __repr__(self):
+        return (f"CsvRow(hostname={self.hostname}, processore={self.processor}, pgm_n={self.pgm_n}, "
+                f"tipo_formato_flusso={self.flow_format}, source_stream={self.source_stream}, source_channel={self.source_channel}")        
+
+def parse_output_config(file_path):
     rows = []
     with open(file_path, mode='r', newline='') as csvfile:
         csvreader = csv.DictReader(csvfile, delimiter=';')
@@ -207,6 +247,21 @@ def parse_csv(file_path):
                 mcast_blue=row['Mcast Blue'],
                 port=row['Port'],
                 enable=row['Enable']
+            )
+            rows.append(csv_row)
+    return rows
+
+def parse_audio_config(file_path):
+    rows = []
+    with open(file_path, mode='r', newline='') as csvfile:
+        csvreader = csv.DictReader(csvfile, delimiter=';')
+        for row in csvreader:
+            csv_row = CsvRowAudRx(
+                hostname=row['Hostname'],
+                processor=row['Processore'],
+                pgm_n=row['PGM N.'],
+                source_stream=row['Sorgente'],
+                source_channel=row['Channel']
             )
             rows.append(csv_row)
     return rows
@@ -240,3 +295,13 @@ def idx_by_process_ipAudTx(processor):
         return 256        
     elif processor == "D":
         return 384        
+    
+def idx_by_process_ipAudRx(processor):
+    if processor == "A":
+        return 0
+    elif processor == "B":
+        return 128
+    elif processor == "C":
+        return 256        
+    elif processor == "D":
+        return 384            

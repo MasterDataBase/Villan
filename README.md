@@ -14,6 +14,7 @@ In questo momento vengono configurati solo i canali in uscita, i canali audio ne
 1:7     2:15
 1:8     2:16
 
+Se nel csv viene specificato un processore, il tool andrà a prendere il program specificato nel processore scritto, nel csv può essere specificato più di un processore per volte, devono essere metti in ordine insieme al program number
 
 Lessico parametri: 
 - debug -> se true non configura l'SNP, ma crea i json relativi a ogni canale fornito, per verificare se siano corretti, in caso false, il json creato viene caricato sull'SNP.

@@ -1,0 +1,907 @@
+{
+  "type": "ipAudRx",
+  "fme_ip": "10.130.13.232",
+  "name": "ipAudRx",
+  "object_ID": "ipAudRx",
+  "parent_object_ID": "snpIpRx",
+  "config": {
+    "AudRxRouting": [
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      },
+      {
+        "idx": 257,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "1"
+      },
+      {
+        "idx": 258,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "2"
+      },
+      {
+        "idx": 259,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "3"
+      },
+      {
+        "idx": 260,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "4"
+      },
+      {
+        "idx": 261,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "5"
+      },
+      {
+        "idx": 262,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "6"
+      },
+      {
+        "idx": 263,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "7"
+      },
+      {
+        "idx": 264,
+        "AudRxStreamSelect": [
+          "1"
+        ],
+        "AudRxChannelInStream": "8"
+      },
+      {
+        "idx": 265,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "9"
+      },
+      {
+        "idx": 266,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "10"
+      },
+      {
+        "idx": 267,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "11"
+      },
+      {
+        "idx": 268,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "12"
+      },
+      {
+        "idx": 269,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "13"
+      },
+      {
+        "idx": 270,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "14"
+      },
+      {
+        "idx": 271,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "15"
+      },
+      {
+        "idx": 272,
+        "AudRxStreamSelect": [
+          "2"
+        ],
+        "AudRxChannelInStream": "16"
+      }
+    ]
+  }
+}
