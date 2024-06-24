@@ -198,6 +198,56 @@ class ipAudRx:
             "AudRxRouting": {}
         }
     }
+    
+class ipVidRx: 
+    def __init__(self, idx,  VidRxNextPriIPaddr, VidRxNextPriUDPport, VidRxPriMcastSrc1, VidRxNextSecIPaddr,  VidRxNextSecUDPport, VidRxSecMcastSrc1,
+                 VidRxPriWANSel="WAN 1", VidRxSecWANSel = "WAN 2", VidRxEnable=True, VidRxMode="ST2110-20"):
+        self.idx = idx
+        self.VidRxEnable = VidRxEnable
+        self.VidRxMode = VidRxMode
+        self.VidRxNextPriIPaddr = VidRxNextPriIPaddr
+        self.VidRxPriWANSel = VidRxPriWANSel
+        self.VidRxNextPriUDPport = VidRxNextPriUDPport
+        self.VidRxPriMcastSrc1 = VidRxPriMcastSrc1
+        self.VidRxNextSecIPaddr = VidRxNextSecIPaddr
+        self.VidRxSecWANSel = VidRxSecWANSel
+        self.VidRxNextSecUDPport = VidRxNextSecUDPport
+        self.VidRxSecMcastSrc1 = VidRxSecMcastSrc1
+
+    def to_dict(self):
+        return {
+            "idx": self.idx,
+            "VidRxEnable": self.VidRxEnable,
+            "VidRxMode": self.VidRxMode,
+            "VidRxNextPriIPaddr": self.VidRxNextPriIPaddr,
+            "VidRxPriWANSel": self.VidRxPriWANSel,
+            "VidRxNextPriUDPport": self.VidRxNextPriUDPport,
+            "VidRxPriMcastSrc1": self.VidRxPriMcastSrc1,
+            "VidRxNextSecIPaddr": self.VidRxNextSecIPaddr,
+            "VidRxSecWANSel": self.VidRxSecWANSel,
+            "VidRxNextSecUDPport": self.VidRxNextSecUDPport,
+            "VidRxSecMcastSrc1": self.VidRxSecMcastSrc1
+        }
+        
+    def __repr__(self):
+        return (f"ipVidRxCtrl(idx={self.idx}, VidRxEnable={self.VidRxEnable}, VidRxMode={self.VidRxMode}, "
+                f"VidRxNextPriIPaddr={self.VidRxNextPriIPaddr}, VidRxPriWANSel={self.VidRxPriWANSel}, "
+                f"VidRxNextPriUDPport={self.VidRxNextPriUDPport}, VidRxPriMcastSrc1={self.VidRxPriMcastSrc1}, "
+                f"VidRxNextSecIPaddr={self.VidRxNextSecIPaddr}, VidRxSecWANSel={self.VidRxSecWANSel}, "
+                f"VidRxNextSecUDPport={self.VidRxNextSecUDPport} , VidRxSecMcastSrc1={self.VidRxSecMcastSrc1})")
+        
+        
+        
+    CONFIG_IPVIDRX = {
+        "type": "ipVidRx",
+        "fme_ip": "",
+        "name": "ipVidRx",
+        "object_ID": "ipVidRx",
+        "parent_object_ID": "snpTx",
+        "config": {
+            "ipVidRxCtrl": {}
+        }
+    }    
          
 
 class CsvRow:
@@ -217,7 +267,7 @@ class CsvRow:
         return (f"CsvRow(hostname={self.hostname}, processore={self.processor}, pgm_n={self.pgm_n}, "
                 f"tipo_formato_flusso={self.flow_format}, ssm_no_set1={self.ssm_red}, "
                 f"ssm_no_set2={self.ssm_blue}, mcast_red={self.mcast_red}, mcast_blue={self.mcast_blue}, "
-                f"port={self.port}, enable={self.enable}")
+                f"port={self.port}, enable={self.enable})")
         
 class CsvRowAudRx:
     def __init__(self, hostname, processor, pgm_n, source_stream, source_channel):
@@ -245,6 +295,26 @@ def parse_output_config(file_path):
                 ssm_blue=row['SSM No set'],
                 mcast_red=row['Mcast Red'],
                 mcast_blue=row['Mcast Blue'],
+                port=row['Port'],
+                enable=row['Enable']
+            )
+            rows.append(csv_row)
+    return rows
+
+def parse_input_config(file_path):
+    rows = []
+    with open(file_path, mode='r', newline='') as csvfile:
+        csvreader = csv.DictReader(csvfile, delimiter=';')
+        for row in csvreader:
+            csv_row = CsvRow(
+                hostname=row['Hostname'],
+                processor=row['Processore'],
+                pgm_n=row['PGM_N'],
+                flow_format=row['Tipo_formato_flusso'],
+                ssm_red=row['SSM_Red'],
+                ssm_blue=row['SSM_Blue'],
+                mcast_red=row['Mcast_Red'],
+                mcast_blue=row['Mcast_Blue'],
                 port=row['Port'],
                 enable=row['Enable']
             )

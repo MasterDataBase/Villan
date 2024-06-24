@@ -12,5 +12,6 @@
     "ipVidTx": false,
     "ipAncTx": false,
     "ipAudTx": false,
-    "ipAudRx": true
+    "ipAudRx": false,
+    "ipVidRx": true
 }

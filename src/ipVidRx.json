@@ -1,0 +1,115 @@
+{
+  "type": "ipVidRx",
+  "fme_ip": "10.130.13.232",
+  "name": "ipVidRx",
+  "object_ID": "ipVidRx",
+  "parent_object_ID": "snpTx",
+  "config": {
+    "ipVidRxCtrl": [
+      {
+        "idx": 25,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 26,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 27,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 28,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 29,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 30,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 31,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      },
+      {
+        "idx": 32,
+        "VidRxEnable": false,
+        "VidRxMode": "ST2110-20",
+        "VidRxNextPriIPaddr": "234.1.0.2",
+        "VidRxPriWANSel": "WAN 1",
+        "VidRxNextPriUDPport": 50100,
+        "VidRxPriMcastSrc1": "10.169.32.2",
+        "VidRxNextSecIPaddr": "235.1.0.2",
+        "VidRxSecWANSel": "WAN 2",
+        "VidRxNextSecUDPport": 50100,
+        "VidRxSecMcastSrc1": "10.169.160.2"
+      }
+    ]
+  }
+}
