@@ -12,6 +12,7 @@
     "ipVidTx": false,
     "ipAncTx": false,
     "ipAudTx": false,
-    "ipAudRx": false,
-    "ipVidRx": true
+    "ipAudRx_Routing": false,
+    "ipVidRx": false,
+    "ipAudRx": true
 }

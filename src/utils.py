@@ -248,7 +248,57 @@ class ipVidRx:
             "ipVidRxCtrl": {}
         }
     }    
-         
+        
+class ipAudRx_v2:
+    def __init__(self,  idx, AudRxNextPriIPaddr, AudRxPriMcastSrc1, AudRxNextPriUDPport,  
+                 AudRxSecMcastSrc1, AudRxNextSecIPaddr, AudRxNextSecUDPport,  
+                 AudRxPriWANSel = "WAN 1", AudRxSecWANSel = "WAN 2", AudRxEnable = False, AudRxMode = "ST2110-30", AudRxNumCh = 2):
+        self.idx = idx
+        self.AudRxNextPriIPaddr = AudRxNextPriIPaddr
+        self.AudRxPriMcastSrc1 = AudRxPriMcastSrc1
+        self.AudRxNextPriUDPport = AudRxNextPriUDPport
+        self.AudRxPriWANSel = AudRxPriWANSel
+        self.AudRxSecMcastSrc1 = AudRxSecMcastSrc1
+        self.AudRxNextSecIPaddr = AudRxNextSecIPaddr
+        self.AudRxNextSecUDPport = AudRxNextSecUDPport
+        self.AudRxSecWANSel = AudRxSecWANSel
+        self.AudRxEnable = AudRxEnable
+        self.AudRxMode = AudRxMode
+        self.AudRxNumCh = AudRxNumCh
+
+    def __repr__(self):
+        return (f"AudRx(idx={self.idx}, AudRxNextPriIPaddr={self.AudRxNextPriIPaddr}, AudRxPriMcastSrc1={self.AudRxPriMcastSrc1}, "
+                f"AudRxNextPriUDPport={self.AudRxNextPriUDPport}, AudRxPriWANSel={self.AudRxPriWANSel}, "
+                f"AudRxSecMcastSrc1={self.AudRxSecMcastSrc1}, AudRxNextSecIPaddr={self.AudRxNextSecIPaddr},"
+                f"AudRxNextSecUDPport={self.AudRxNextSecUDPport}, AudRxSecWANSel={self.AudRxSecWANSel}, AudRxEnable={self.AudRxEnable}, "
+                f"AudRxMode={self.AudRxMode}, AudRxNumCh={self.AudRxNumCh})")
+
+    def to_dict(self):
+        return {
+            "idx": self.idx,
+            "AudRxNextPriIPaddr": self.AudRxNextPriIPaddr,
+            "AudRxPriMcastSrc1": self.AudRxPriMcastSrc1,
+            "AudRxNextPriUDPport": self.AudRxNextPriUDPport,
+            "AudRxPriWANSel": self.AudRxPriWANSel,
+            "AudRxSecMcastSrc1": self.AudRxSecMcastSrc1,
+            "AudRxNextSecIPaddr": self.AudRxNextSecIPaddr,
+            "AudRxNextSecUDPport": self.AudRxNextSecUDPport,
+            "AudRxSecWANSel": self.AudRxSecWANSel,
+            "AudRxEnable": self.AudRxEnable,
+            "AudRxMode": self.AudRxMode,
+            "AudRxNumCh": self.AudRxNumCh
+        }    
+
+    CONFIG_IPAUDRX = {
+        "type": "ipAudRx",
+        "fme_ip": "",
+        "name": "ipAudRx",
+        "object_ID": "ipAudRx",
+        "parent_object_ID": "snpIpRx",
+        "config":{
+            "ipAudRxCtrl": {}
+        }
+    }         
 
 class CsvRow:
     def __init__(self, hostname, processor, pgm_n, flow_format, ssm_red, ssm_blue, mcast_red, mcast_blue, port, enable):

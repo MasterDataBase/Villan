@@ -220,7 +220,7 @@ def config_ipAudTx():
         print("Failed to retrieve token")    
         return False       
     
-def config_ipAudRx():
+def config_ipAudRx_Routing():
     token = get_auth_token()
     if token: 
         payloadAud = copy.deepcopy(utils.ipAudRx.CONFIG_IPAUDRX)
@@ -234,7 +234,7 @@ def config_ipAudRx():
             idx = idx + 1
         payloadAud['config']['AudRxRouting'] = audRxRouting
           
-        with open(str('ipAudRx') + '.json', 'w') as file_a:
+        with open(str('ipAudRx_Routing') + '.json', 'w') as file_a:
             json.dump(payloadAud, file_a, indent=2)
         
         if debug_mode:
@@ -297,6 +297,60 @@ def config_ipVidRx():
     else:
         print("Failed to retrieve token")    
         return False     
+    
+def config_ipAudRx():
+    token = get_auth_token()
+    if token: 
+        payloadAud = copy.deepcopy(utils.ipAudRx_v2.CONFIG_IPAUDRX)
+        payloadAud['fme_ip'] = machine
+        
+        ipAudRxCtrl = list()
+        for row in input_config: 
+            if row.flow_format == "2110-30 A Grp1 8ch":
+                idx = ((utils.idx_by_process_ipVidTx(row.processor) + int(row.pgm_n)) * 16) - 15
+                elm = utils.ipAudRx_v2(idx=idx,
+                                    AudRxNextPriIPaddr=row.mcast_red,
+                                    AudRxPriMcastSrc1=row.ssm_red,
+                                    AudRxNextPriUDPport=int(row.port),
+                                    AudRxNextSecIPaddr=row.mcast_blue,
+                                    AudRxSecMcastSrc1 = row.ssm_blue,
+                                    AudRxNextSecUDPport=int(row.port),
+                                    AudRxEnable=eval(row.enable))
+                ipAudRxCtrl.append(elm.to_dict())                     
+                
+            elif row.flow_format == "2110-30 A Grp2 8ch": 
+                idx = ((utils.idx_by_process_ipVidTx(row.processor) + int(row.pgm_n)) * 16) - 14
+                elm = utils.ipAudRx_v2(idx=idx,
+                                    AudRxNextPriIPaddr=row.mcast_red,
+                                    AudRxPriMcastSrc1=row.ssm_red,
+                                    AudRxNextPriUDPport=int(row.port),
+                                    AudRxNextSecIPaddr=row.mcast_blue,
+                                    AudRxSecMcastSrc1 = row.ssm_blue,
+                                    AudRxNextSecUDPport=int(row.port),
+                                    AudRxEnable=eval(row.enable))
+                ipAudRxCtrl.append(elm.to_dict())
+        payloadAud['config']['ipAudRxCtrl'] = ipAudRxCtrl
+        with open(str('ipAudRx') + '.json', 'w') as file_a:
+            json.dump(payloadAud, file_a, indent=2)
+        
+        if debug_mode:
+            print ("ipAudRx_Ctrl json printed")
+            return
+        else: 
+            api_url = base_url + "/api/elements/" +  machine + "/config/ipAudRx"
+            headers = {
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json'
+            }
+            payloadAud['config'] = json.dumps(payloadAud['config'])
+            response = requests.put(api_url, data=json.dumps(payloadAud), headers=headers, verify=False, stream=True)
+            if response.status_code == 200: 
+                print("Audio input 2110 configured")
+            else: 
+                handle_http_error(response=response, channel="ipAudRx")
+    else:
+        print("Failed to retrieve token")    
+        return False       
 
 def handle_http_error(response, channel):
     print(str(response.raw))
@@ -362,11 +416,14 @@ try:
     if snpInfo['ipAudTx'] == True:
         config_ipAudTx()
         
-    if snpInfo['ipAudRx'] == True:
-        config_ipAudRx()
-        
     if snpInfo['ipVidRx'] == True:
         config_ipVidRx()
+        
+    if snpInfo['ipAudRx_Routing'] == True:
+        config_ipAudRx_Routing()
+        
+    if snpInfo['ipAudRx'] == True:
+        config_ipAudRx()                
 
 except:
     logging.exception('')
