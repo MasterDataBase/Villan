@@ -14,5 +14,6 @@
     "ipAudTx": false,
     "ipAudRx_Routing": false,
     "ipVidRx": false,
-    "ipAudRx": true
+    "ipAudRx": false,
+    "ipAncRx": true
 }

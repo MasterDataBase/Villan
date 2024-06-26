@@ -12,4 +12,6 @@ Il csv per configurare l'ouput è nominato "outputConfig.csv"
 
 Lessico parametri: 
 - debug -> se true non configura l'SNP, ma crea i json relativi a ogni canale fornito, per verificare se siano corretti, in caso false, il json creato viene caricato sull'SNP.
-- ipVidTx / ipAncTx / ipAudTx / ipAudRx-> Rispettivamente canale audio, data, audio output (1 e 2) e audio input, se a false non vengono generati i json file relativi, e non viene caricato nulla sull'SNP a prescindere se debug è true o false.
+- ipVidTx / ipAncTx / ipAudTx -> Rispettivamente canale audio, data, audio output (1 e 2), se a false non vengono generati i json file relativi, e non viene caricato nulla sull'SNP a prescindere se debug è true o false.
+- ipAudRx_Routing -> configurazione dei canali audio sui relativi stream, viene eseguito dal csv "inputAudio"
+- ipVidRx / ipAncRx / ipAudRx -> Configura rispettivamente gli audio 1 e 2, video e data in ingresso sui program indicati. 

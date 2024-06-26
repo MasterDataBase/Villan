@@ -1,0 +1,107 @@
+{
+  "type": "ipAncRx",
+  "fme_ip": "10.130.13.232",
+  "name": "ipAncRx",
+  "object_ID": "ipAncRx",
+  "parent_object_ID": "snpIpRx",
+  "config": {
+    "ipAncRxCtrl": [
+      {
+        "idx": 97,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 101,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 105,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 109,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 113,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 117,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 121,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      },
+      {
+        "idx": 125,
+        "AncRxNextPriIPaddr": "234.0.0.2",
+        "AncRxNextPriUDPport": 50103,
+        "AncRxPriMcastSrc1": "10.169.32.2",
+        "AncRxNextSecIPaddr": "235.0.0.2",
+        "AncRxNextSecUDPport": 50103,
+        "AncRxSecMcastSrc1": "10.169.160.2",
+        "AncRxPriWANSel": "WAN 1",
+        "AncRxSecWANSel": "WAN 2",
+        "AncRxEnable": false
+      }
+    ]
+  }
+}

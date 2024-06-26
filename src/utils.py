@@ -42,7 +42,7 @@ class ipVidTx:
         "fme_ip": "",
         "name": "ipVidTx",
         "object_ID": "ipVidTx",
-        "parent_object_ID": "snpTx",
+        "parent_object_ID": "snpIpTx",
         "config": {
             "ipVidTxCtrl": {}
         }
@@ -86,7 +86,7 @@ class ipAncTx:
         "fme_ip": "",
         "name": "ipAncTx",
         "object_ID": "ipAncTx",
-        "parent_object_ID": "snpTx",
+        "parent_object_ID": "snpIpTx",
         "config":{
             "ipAncTxCtrl": {}
         }
@@ -134,7 +134,7 @@ class ipAudTx:
         "fme_ip": "10.130.13.232",
         "name": "ipAudTx",
         "object_ID": "ipAudTx",
-        "parent_object_ID": "snpTx",
+        "parent_object_ID": "snpIpTx",
         "config":{
             "ipAudTxCtrl": {},
             "AudTxRouting": {}
@@ -243,7 +243,7 @@ class ipVidRx:
         "fme_ip": "",
         "name": "ipVidRx",
         "object_ID": "ipVidRx",
-        "parent_object_ID": "snpTx",
+        "parent_object_ID": "snpIpRx",
         "config": {
             "ipVidRxCtrl": {}
         }
@@ -298,7 +298,54 @@ class ipAudRx_v2:
         "config":{
             "ipAudRxCtrl": {}
         }
-    }         
+    }     
+    
+class ipAncRx:
+    def __init__(self,  idx, AncRxNextPriIPaddr, AncRxNextPriUDPport, AncRxPriMcastSrc1,
+                 AncRxNextSecIPaddr, AncRxNextSecUDPport, AncRxSecMcastSrc1,
+                 AncRxPriWANSel="WAN 1", AncRxSecWANSel="WAN 2", AncRxEnable=True):
+        self.idx = idx
+        self.AncRxNextPriIPaddr = AncRxNextPriIPaddr
+        self.AncRxNextPriUDPport = AncRxNextPriUDPport
+        self.AncRxPriMcastSrc1 = AncRxPriMcastSrc1
+        self.AncRxNextSecIPaddr = AncRxNextSecIPaddr
+        self.AncRxNextSecUDPport = AncRxNextSecUDPport
+        self.AncRxSecMcastSrc1 = AncRxSecMcastSrc1
+        self.AncRxPriWANSel = AncRxPriWANSel
+        self.AncRxSecWANSel = AncRxSecWANSel
+        self.AncRxEnable = AncRxEnable
+
+    def to_dict(self):
+        return {
+            "idx": self.idx,
+            "AncRxNextPriIPaddr": self.AncRxNextPriIPaddr,
+            "AncRxNextPriUDPport": self.AncRxNextPriUDPport,
+            "AncRxPriMcastSrc1": self.AncRxPriMcastSrc1,
+            "AncRxNextSecIPaddr": self.AncRxNextSecIPaddr,
+            "AncRxNextSecUDPport": self.AncRxNextSecUDPport,
+            "AncRxSecMcastSrc1": self.AncRxSecMcastSrc1,
+            "AncRxPriWANSel": self.AncRxPriWANSel,
+            "AncRxSecWANSel": self.AncRxSecWANSel,
+            "AncRxEnable": self.AncRxEnable,
+    }
+    
+    def __repr__(self):
+        return (f"ipAncRx(AncRxNextPriIPaddr={self.AncRxNextPriIPaddr}, AncRxNextPriUDPport={self.AncRxNextPriUDPport}, "
+                f"AncRxPriMcastSrc1={self.AncRxPriMcastSrc1}, AncRxNextSecIPaddr={self.AncRxNextSecIPaddr}, AncRxNextSecUDPport={self.AncRxNextSecUDPport},"
+                f"AncRxSecMcastSrc1={self.AncRxSecMcastSrc1}, "
+                f"AncRxPriWANSel={self.AncRxPriWANSel}, AncRxSecWANSel={self.AncRxSecWANSel}, AncRxEnable={self.AncRxEnable}, idx={self.idx})")    
+        
+    CONFIG_IPANCTX = {
+        "type": "ipAncRx",
+        "fme_ip": "",
+        "name": "ipAncRx",
+        "object_ID": "ipAncRx",
+        "parent_object_ID": "snpIpRx",
+        "config":{
+            "ipAncRxCtrl": {}
+        }
+    }        
+             
 
 class CsvRow:
     def __init__(self, hostname, processor, pgm_n, flow_format, ssm_red, ssm_blue, mcast_red, mcast_blue, port, enable):

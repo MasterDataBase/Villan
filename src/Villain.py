@@ -351,6 +351,50 @@ def config_ipAudRx():
     else:
         print("Failed to retrieve token")    
         return False       
+    
+def config_ipAncRx():
+    token = get_auth_token()
+    if token: 
+        payloadAnc = copy.deepcopy(utils.ipAncRx.CONFIG_IPANCTX)
+        payloadAnc['fme_ip'] = machine
+        
+        # pointerChannel = out
+        ipAncRxCtrl = list()
+        for row in input_config: 
+            if row.flow_format == "2110-10_M":
+                idx = ((utils.idx_by_process_ipVidTx(row.processor) + int(row.pgm_n)) * 4) - 3
+                elm = utils.ipAncRx(idx=idx,
+                                    AncRxNextPriIPaddr=row.mcast_red,
+                                    AncRxNextPriUDPport=int(row.port),
+                                    AncRxPriMcastSrc1=row.ssm_red,
+                                    AncRxNextSecIPaddr=row.mcast_blue,
+                                    AncRxNextSecUDPport=int(row.port),
+                                    AncRxSecMcastSrc1=row.ssm_blue,
+                                    AncRxEnable=eval(row.enable))
+                ipAncRxCtrl.append(elm.to_dict())
+        payloadAnc['config']['ipAncRxCtrl'] = ipAncRxCtrl
+        
+        with open(str('ipAncRx') + '.json', 'w') as file_a:
+            json.dump(payloadAnc, file_a, indent=2)
+        
+        if debug_mode:
+            print ("ipAncRx json printed")
+            return
+        else: 
+            api_url = base_url + "/api/elements/" +  machine + "/config/ipAncRx"
+            headers = {
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json'
+            }
+            payloadAnc['config'] = json.dumps(payloadAnc['config'])
+            response = requests.put(api_url, data=json.dumps(payloadAnc), headers=headers, verify=False, stream=True)
+            if response.status_code == 200: 
+                print("Ancillary Data input 2110 configured")
+            else: 
+                handle_http_error(response=response, channel="ipAncRx")
+    else:
+        print("Failed to retrieve token")    
+        return False              
 
 def handle_http_error(response, channel):
     print(str(response.raw))
@@ -423,9 +467,13 @@ try:
         config_ipAudRx_Routing()
         
     if snpInfo['ipAudRx'] == True:
-        config_ipAudRx()                
+        config_ipAudRx()   
+        
+    if snpInfo['ipAncRx'] == True:
+        config_ipAncRx()                     
 
 except:
-    logging.exception('')
+    error = logging.exception('')
+    print(error)
     with open(str('error') + '.json', 'w') as file_a:
         json.dump("error on execution", file_a, indent=2)
