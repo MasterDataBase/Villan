@@ -201,7 +201,7 @@ class ipAudRx:
     
 class ipVidRx: 
     def __init__(self, idx,  VidRxNextPriIPaddr, VidRxNextPriUDPport, VidRxPriMcastSrc1, VidRxNextSecIPaddr,  VidRxNextSecUDPport, VidRxSecMcastSrc1,
-                 VidRxPriWANSel="WAN 1", VidRxSecWANSel = "WAN 2", VidRxEnable=True, VidRxMode="ST2110-20"):
+                 VidRxPriWANSel="WAN 1", VidRxSecWANSel = "WAN 1", VidRxEnable=True, VidRxMode="ST2110-20"):
         self.idx = idx
         self.VidRxEnable = VidRxEnable
         self.VidRxMode = VidRxMode
@@ -252,7 +252,7 @@ class ipVidRx:
 class ipAudRx_v2:
     def __init__(self,  idx, AudRxNextPriIPaddr, AudRxPriMcastSrc1, AudRxNextPriUDPport,  
                  AudRxSecMcastSrc1, AudRxNextSecIPaddr, AudRxNextSecUDPport,  
-                 AudRxPriWANSel = "WAN 1", AudRxSecWANSel = "WAN 2", AudRxEnable = False, AudRxMode = "ST2110-30", AudRxNumCh = 2):
+                 AudRxPriWANSel = "WAN 1", AudRxSecWANSel = "WAN 1", AudRxEnable = False, AudRxMode = "ST2110-30", AudRxNumCh = 8):
         self.idx = idx
         self.AudRxNextPriIPaddr = AudRxNextPriIPaddr
         self.AudRxPriMcastSrc1 = AudRxPriMcastSrc1
@@ -303,7 +303,7 @@ class ipAudRx_v2:
 class ipAncRx:
     def __init__(self,  idx, AncRxNextPriIPaddr, AncRxNextPriUDPport, AncRxPriMcastSrc1,
                  AncRxNextSecIPaddr, AncRxNextSecUDPport, AncRxSecMcastSrc1,
-                 AncRxPriWANSel="WAN 1", AncRxSecWANSel="WAN 2", AncRxEnable=True):
+                 AncRxPriWANSel="WAN 1", AncRxSecWANSel="WAN 1", AncRxEnable=True):
         self.idx = idx
         self.AncRxNextPriIPaddr = AncRxNextPriIPaddr
         self.AncRxNextPriUDPport = AncRxNextPriUDPport
